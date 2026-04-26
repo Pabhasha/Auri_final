@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 20% 6%;
+    --foreground: 240 20% 92%;
+
+    --card: 260 18% 10%;
+    --card-foreground: 240 20% 92%;
+
+    --popover: 260 18% 10%;
+    --popover-foreground: 240 20% 92%;
+
+    --primary: 265 80% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 60% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 260 15% 15%;
+    --muted-foreground: 240 10% 55%;
+
+    --accent: 265 80% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 260 15% 18%;
+    --input: 260 15% 18%;
+    --ring: 265 80% 65%;
+
+    --radius: 0.75rem;
+
+    --glow-primary: 265 80% 65%;
+    --glow-secondary: 220 60% 50%;
+
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Outfit', sans-serif;
+
+    --sidebar-background: 260 18% 10%;
+    --sidebar-foreground: 240 20% 92%;
+    --sidebar-primary: 265 80% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 260 15% 15%;
+    --sidebar-accent-foreground: 240 20% 92%;
+    --sidebar-border: 260 15% 18%;
+    --sidebar-ring: 265 80% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 20px hsl(var(--glow-primary) / 0.5),
+                 0 0 40px hsl(var(--glow-primary) / 0.3),
+                 0 0 80px hsl(var(--glow-primary) / 0.1);
+  }
+
+  .box-glow {
+    box-shadow: 0 0 15px hsl(var(--glow-primary) / 0.3),
+                0 0 30px hsl(var(--glow-primary) / 0.15);
+  }
+
+  .box-glow-sm {
+    box-shadow: 0 0 8px hsl(var(--glow-primary) / 0.2),
+                0 0 16px hsl(var(--glow-primary) / 0.1);
+  }
+}
+
+/* Mobile: chapter dots at bottom */
+@media (max-width: 767px) {
+  [data-chapter] {
+    scroll-margin-top: 2rem;
+  }
+}
